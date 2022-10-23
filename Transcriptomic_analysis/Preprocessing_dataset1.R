@@ -1,9 +1,9 @@
 # Processing Dataset GSE157643
 
 ## Dataset 1 
-Effect of iodine on Arabidopsis thaliana (Col-0) trancriptome
-https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157643
-GEO Accession: GSE157643
+# Effect of iodine on Arabidopsis thaliana (Col-0) trancriptome
+# https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157643
+# GEO Accession: GSE157643
 
 
 
@@ -22,7 +22,7 @@ library(arrayQualityMetrics)
 library(matrixStats)
 
 
-### Step 1 - Feature extraction
+### Step 1 - Feature extraction ----------------------
 
 
 # Get supplementary files
@@ -60,7 +60,7 @@ feature.data <- feature.data %>% mutate_all(na_if,"")
 sum(is.na(feature.data$AGI))
 
 
-#### Step 2 - Quality control
+#### Step 2 - Quality control ------------------------------------------------
 
 df1 <- exprs(raw.data)
 
@@ -70,7 +70,7 @@ colnames(df1) <- c("leaves_control", "leaves_KBr", "leaves_NaI", "leaves_KI",
 colnames(df1)
 
 
-### Normality verification
+### Normality verification --------------------------------
 
 Box-and-whisker plot
 
@@ -94,7 +94,7 @@ colnames(df1)[which(pv.orig < 0.01)]
 
 
 
-### Step 3 - Normalization
+### Step 3 - Normalization---------------------------------------------------------------
 # Since data is not normally distributed, it will be normalized using rma (log 2 base scale);
 # rma converts an affybatch object into an expression set using the RMA measure.
 
@@ -127,7 +127,7 @@ p2
 
 
 
-### Feature Data manipulation
+### Feature Data manipulation ----------------------------------
 
 # Feature data contains an ID column (column 1) that corresponds to the row names of the data, 
 # and a gene symbol column (column 11). Also, column 12 is the NCBI or Entrez Gene ID.
