@@ -2,5 +2,5 @@ Bioinformatics strategies to epxplore iodine transport in plants and its potenti
 
 Repository for the exploration of iodine transport mechanisms through: 
 
-- Phylogenetic anlysis
+- Phylogenetic analysis
 - Transcriptomic analysis
